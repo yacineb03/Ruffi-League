@@ -21,15 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-
             const btn = form.querySelector('button');
             const originalText = btn.innerHTML;
-
             btn.classList.add('loading');
             btn.disabled = true;
-
             const formData = new FormData(form);
-
             fetch("https://formspree.io/f/xqepqrvy", {
                 method: "POST",
                 body: formData,
@@ -58,11 +54,19 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
+            const href = this.getAttribute('href');
+            if (href === "#") {
+                window.scrollTo({
+                    top: 0,
                     behavior: 'smooth'
                 });
+            } else {
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
     });
