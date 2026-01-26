@@ -391,6 +391,41 @@ select.form-control {
     }
 }
 
+/* Partners Grid */
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 3rem;
+    align-items: center;
+    justify-items: center;
+}
+
+.partner-logo {
+    width: 100%;
+    max-width: 200px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.partner-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: brightness(0.9) grayscale(0.4);
+    transition: var(--transition);
+}
+
+.partner-logo:hover {
+    transform: scale(1.05);
+}
+
+.partner-logo:hover img {
+    filter: brightness(1) grayscale(0);
+}
+
 .signature-section {
     padding: 10rem 0;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)), url('images/ruffi-ground.jpg');
