@@ -138,6 +138,18 @@ html {
     .nav-link.active {
         padding: 0.3rem 0.6rem;
     }
+
+    /* Ajustement Hero pour mobile */
+    .hero {
+        padding-top: 100px;
+        align-items: flex-start;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .hero h1 {
+        margin-top: 2rem;
+    }
 }
 
 .container {
@@ -149,6 +161,7 @@ html {
 
 .section {
     padding: 5rem 0;
+    scroll-margin-top: 100px;
 }
 
 .text-orange {
