@@ -78,5 +78,33 @@ document.addEventListener('DOMContentLoaded', () => {
             hero.style.backgroundPositionY = -(scrolled * 0.3) + 'px';
         }
     });
+    // Countdown Logic
+    const targetDate = new Date("February 25, 2026 23:59:59").getTime();
+
+    const updateCountdown = () => {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        const daysEl = document.getElementById("days");
+        const hoursEl = document.getElementById("hours");
+        const minutesEl = document.getElementById("minutes");
+
+        if (daysEl) daysEl.innerText = days.toString().padStart(2, '0');
+        if (hoursEl) hoursEl.innerText = hours.toString().padStart(2, '0');
+        if (minutesEl) minutesEl.innerText = minutes.toString().padStart(2, '0');
+
+        if (distance < 0) {
+            clearInterval(countdownInterval);
+            const heroDeadline = document.querySelector('.hero-deadline');
+            if (heroDeadline) heroDeadline.innerHTML = "<span class='deadline-label'>🚨 Les inscriptions sont closes !</span>";
+        }
+    };
+
+    const countdownInterval = setInterval(updateCountdown, 1000 * 60);
+    updateCountdown();
 
 });

@@ -98,7 +98,7 @@ html {
 .btn-primary:hover {
     background-color: var(--primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(255, 107, 0, 0.3);
+    box-shadow: 0 10px 25px rgba(255, 107, 0, 0.4);
 }
 
 .btn-secondary {
@@ -166,6 +166,54 @@ html {
     letter-spacing: 0.1em;
     font-size: 0.9rem;
     text-transform: uppercase;
+}
+
+.hero-deadline {
+    margin-bottom: 2.5rem;
+    background: rgba(255, 107, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 107, 0, 0.3);
+    display: inline-block;
+    backdrop-filter: blur(5px);
+}
+
+.deadline-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.05em;
+}
+
+.countdown {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.count-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.count-item span {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: white;
+    line-height: 1;
+}
+
+.count-item small {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 700;
+    margin-top: 0.2rem;
 }
 
 .section-title {
@@ -479,6 +527,148 @@ footer {
 
 .social-link:hover {
     color: var(--primary);
+}
+
+/* Timeline & Location Styles */
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    height: 100%;
+    width: 2px;
+    background: var(--concrete);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: calc(-2rem - 5px);
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--concrete);
+    border: 3px solid var(--bg-dark);
+    transition: var(--transition);
+}
+
+.timeline-item:hover::after {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.timeline-item.highlight::after {
+    background: var(--primary);
+    box-shadow: 0 0 15px var(--primary);
+}
+
+.timeline-date {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    color: var(--primary);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.2rem;
+}
+
+.timeline-content h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.timeline-content p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.location-card {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--concrete);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+}
+
+.location-info {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.location-info i {
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+.location-info h4 {
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+}
+
+.location-info p {
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.location-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--concrete);
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.detail-item i {
+    color: var(--primary);
+}
+
+.schedule-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.day-badge {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(42, 42, 42, 0.5);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--primary);
+}
+
+.day-badge span {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+}
+
+.day-badge strong {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
 }
 
 [data-aos] {
