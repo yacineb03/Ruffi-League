@@ -12,22 +12,13 @@
 </head>
 
 <body>
-    <nav
-        style="position: fixed; top: 0; width: 100%; z-index: 100; backdrop-filter: blur(10px); background: rgba(10, 10, 10, 0.8); border-bottom: 1px solid var(--concrete);">
-        <div class="container"
-            style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem;">
-            <a href="#" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
-                <img src="images/logo.png" alt="Ruffi League Logo" style="height: 40px; width: auto;">
-                <span style="font-family: var(--font-heading); font-weight: 900; font-size: 1.5rem; color: white;">RUFFI
-                    <span class="text-orange">LEAGUE</span></span>
-            </a>
-            <div style="display: flex; gap: 2rem;">
-                <a href="#concept"
-                    style="text-decoration: none; color: var(--text-muted); font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">Concept</a>
-                <a href="#infos"
-                    style="text-decoration: none; color: var(--text-muted); font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">Infos</a>
-                <a href="#inscription" class="text-orange"
-                    style="text-decoration: none; font-weight: 800; font-size: 0.9rem; text-transform: uppercase;">S'inscrire</a>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="nav-logo">RUFFI <span class="text-orange">LEAGUE</span></a>
+            <div class="nav-links">
+                <a href="#concept" class="nav-link">Concept</a>
+                <a href="#infos" class="nav-link">Infos</a>
+                <a href="#inscription" class="nav-link active">S'inscrire</a>
             </div>
         </div>
     </nav>
@@ -44,8 +35,8 @@
                 </div>
             </div>
             <div class="hero-ctas" data-aos="fade-up" style="transition-delay: 0.2s">
-                <a href="#inscription" class="btn btn-primary">👉 Inscrire mon équipe</a>
-                <a href="#concept" class="btn btn-secondary">👉 Comprendre le concept</a>
+                <a href="#inscription" class="btn btn-primary"> Inscrire mon équipe</a>
+                <a href="#concept" class="btn btn-secondary"> Comprendre le concept</a>
             </div>
             <p class="hero-manifesto" data-aos="fade-up" style="transition-delay: 0.3s">La compétition de la street.</p>
         </div>
@@ -287,7 +278,7 @@
                         <label>Message libre (Facultatif)</label>
                         <textarea class="form-control" rows="2"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">👉 Envoyer la demande
+                    <button type="submit" class="btn btn-primary" style="width: 100%;"> Envoyer la demande
                         d’inscription</button>
                 </form>
                 <div id="successScreen" class="success-screen">
